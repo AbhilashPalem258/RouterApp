@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6CFEBE86-9B03-46B0-9600-2E1A3891BEF6"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC146C04-64DF-4F0C-96C4-FAC67B2FAAD5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS/Authentication/SecondLoginScreen/SecondLoginScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "343"
+            endingLineNumber = "343"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "BC146C04-64DF-4F0C-96C4-FAC67B2FAAD5 - 6c24f18c622b5ab0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (CoreGraphics.CGFloat) -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onResetHeightChange(completion: (CoreGraphics.CGFloat) -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onMinXChange(completion: (CoreGraphics.CGFloat) -&gt; ()) -&gt; some&gt;&gt;.0 in iOS.LoginUIKit.ResetPasswordView.body.getter : some"
+                  moduleName = "iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhilashpalem/Documents/PersonalGithub/RouterApp/iOS/iOS/Authentication/SecondLoginScreen/SecondLoginScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "343"
+                  endingLineNumber = "343"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "BC146C04-64DF-4F0C-96C4-FAC67B2FAAD5 - 6c24f18c622b5ab0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (CoreGraphics.CGFloat) -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onResetHeightChange(completion: (CoreGraphics.CGFloat) -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onMinXChange(completion: (CoreGraphics.CGFloat) -&gt; ()) -&gt; some&gt;&gt;.0 in iOS.LoginUIKit.ResetPasswordView.body.getter : some"
+                  moduleName = "iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhilashpalem/Documents/PersonalGithub/RouterApp/iOS/iOS/Authentication/SecondLoginScreen/SecondLoginScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "343"
+                  endingLineNumber = "343"
+                  offsetFromSymbolStart = "541">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C6B17D2-7608-4814-B72A-A7FB166A3087"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS/Authentication/SecondLoginScreen/SecondLoginScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "8C6B17D2-7608-4814-B72A-A7FB166A3087 - fb30a83f5b786957"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (CoreGraphics.CGFloat) -&gt; () in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onMinXChange(completion: (CoreGraphics.CGFloat) -&gt; ()) -&gt; some&gt;&gt;.0 in iOS.LoginUIKit.ResetPasswordView.body.getter : some"
+                  moduleName = "iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhilashpalem/Documents/PersonalGithub/RouterApp/iOS/iOS/Authentication/SecondLoginScreen/SecondLoginScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "361"
+                  endingLineNumber = "361"
+                  offsetFromSymbolStart = "348">
+               </Location>
+               <Location
+                  uuid = "8C6B17D2-7608-4814-B72A-A7FB166A3087 - fb30a83f5b786957"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (CoreGraphics.CGFloat) -&gt; () in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onMinXChange(completion: (CoreGraphics.CGFloat) -&gt; ()) -&gt; some&gt;&gt;.0 in iOS.LoginUIKit.ResetPasswordView.body.getter : some"
+                  moduleName = "iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhilashpalem/Documents/PersonalGithub/RouterApp/iOS/iOS/Authentication/SecondLoginScreen/SecondLoginScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "361"
+                  endingLineNumber = "361"
+                  offsetFromSymbolStart = "538">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47214521-D0AE-402B-B3C9-3E4F8F26D583"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS/Authentication/SecondLoginScreen/SecondLoginScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "47214521-D0AE-402B-B3C9-3E4F8F26D583 - fb30a83f5b786adb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (CoreGraphics.CGFloat) -&gt; () in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onMinXChange(completion: (CoreGraphics.CGFloat) -&gt; ()) -&gt; some&gt;&gt;.0 in iOS.LoginUIKit.ResetPasswordView.body.getter : some"
+                  moduleName = "iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhilashpalem/Documents/PersonalGithub/RouterApp/iOS/iOS/Authentication/SecondLoginScreen/SecondLoginScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "349"
+                  endingLineNumber = "349"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "47214521-D0AE-402B-B3C9-3E4F8F26D583 - fb30a83f5b786adb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (CoreGraphics.CGFloat) -&gt; () in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onMinXChange(completion: (CoreGraphics.CGFloat) -&gt; ()) -&gt; some&gt;&gt;.0 in iOS.LoginUIKit.ResetPasswordView.body.getter : some"
+                  moduleName = "iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhilashpalem/Documents/PersonalGithub/RouterApp/iOS/iOS/Authentication/SecondLoginScreen/SecondLoginScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "349"
+                  endingLineNumber = "349"
+                  offsetFromSymbolStart = "173">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

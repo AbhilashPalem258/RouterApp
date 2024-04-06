@@ -136,6 +136,7 @@ struct FirstAppIntroScreen: View {
                 walkthroughView(vm.activeIntro)
                 bottomSheet
                     .padding(.bottom, safeAreaInsets.bottom)
+                    .frame(maxWidth: 400)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea()
@@ -152,7 +153,7 @@ struct FirstAppIntroScreen: View {
         withAnimation(.snappy(duration: 1.0), completionCriteria: .removed) {
             vm.changeItem()
         } completion: {
-            withAnimation(.snappy(duration: 1.0)) {
+            withAnimation(.snappy(duration: 1.0), completionCriteria: .logicallyComplete) {
                 vm.resetIntroPosition()
             } completion: {
                 animate()

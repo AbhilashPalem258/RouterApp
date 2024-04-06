@@ -11,7 +11,10 @@ import SwiftUI
 struct iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            FirstAppIntroScreen()
+            NavigationStack {
+                GridPaginationView()
+                    .preferredColorScheme(.light)
+            }
         }
     }
 }

@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D519BD822BB9900D00C87B2D /* BiometricAuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519BD812BB9900D00C87B2D /* BiometricAuthScreen.swift */; };
+		D519BD852BBA268A00C87B2D /* SecondLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519BD842BBA268A00C87B2D /* SecondLoginScreen.swift */; };
+		D519BD882BBD028F00C87B2D /* GridPaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519BD872BBD028F00C87B2D /* GridPaginationView.swift */; };
 		D53716302BB7858200B3CF75 /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D537162F2BB7858200B3CF75 /* iOSApp.swift */; };
 		D53716322BB7858200B3CF75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53716312BB7858200B3CF75 /* ContentView.swift */; };
 		D53716342BB7858500B3CF75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53716332BB7858500B3CF75 /* Assets.xcassets */; };
 		D53716372BB7858500B3CF75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53716362BB7858500B3CF75 /* Preview Assets.xcassets */; };
 		D53716412BB78DB300B3CF75 /* FirstAppIntroScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53716402BB78DB300B3CF75 /* FirstAppIntroScreen.swift */; };
 		D53716432BB78EAE00B3CF75 /* FirstAppIntroScreen.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53716422BB78EAE00B3CF75 /* FirstAppIntroScreen.xcassets */; };
+		D53716482BB8588900B3CF75 /* FirstLoginScreen.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53716472BB8588900B3CF75 /* FirstLoginScreen.xcassets */; };
+		D537164A2BB8589B00B3CF75 /* FirstLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53716492BB8589B00B3CF75 /* FirstLoginScreen.swift */; };
+		D55D7B522BC1F3C8002D88F2 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B512BC1F3C7002D88F2 /* View+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D519BD812BB9900D00C87B2D /* BiometricAuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthScreen.swift; sourceTree = "<group>"; };
+		D519BD842BBA268A00C87B2D /* SecondLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondLoginScreen.swift; sourceTree = "<group>"; };
+		D519BD872BBD028F00C87B2D /* GridPaginationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridPaginationView.swift; sourceTree = "<group>"; };
 		D537162C2BB7858200B3CF75 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D537162F2BB7858200B3CF75 /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		D53716312BB7858200B3CF75 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +32,9 @@
 		D53716362BB7858500B3CF75 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D53716402BB78DB300B3CF75 /* FirstAppIntroScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppIntroScreen.swift; sourceTree = "<group>"; };
 		D53716422BB78EAE00B3CF75 /* FirstAppIntroScreen.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FirstAppIntroScreen.xcassets; sourceTree = "<group>"; };
+		D53716472BB8588900B3CF75 /* FirstLoginScreen.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FirstLoginScreen.xcassets; sourceTree = "<group>"; };
+		D53716492BB8589B00B3CF75 /* FirstLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginScreen.swift; sourceTree = "<group>"; };
+		D55D7B512BC1F3C7002D88F2 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +48,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D519BD802BB98FC800C87B2D /* BiometricAuth */ = {
+			isa = PBXGroup;
+			children = (
+				D519BD812BB9900D00C87B2D /* BiometricAuthScreen.swift */,
+			);
+			path = BiometricAuth;
+			sourceTree = "<group>";
+		};
+		D519BD832BBA267100C87B2D /* SecondLoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D519BD842BBA268A00C87B2D /* SecondLoginScreen.swift */,
+			);
+			path = SecondLoginScreen;
+			sourceTree = "<group>";
+		};
+		D519BD862BBD027100C87B2D /* Pagination */ = {
+			isa = PBXGroup;
+			children = (
+				D519BD872BBD028F00C87B2D /* GridPaginationView.swift */,
+			);
+			path = Pagination;
+			sourceTree = "<group>";
+		};
 		D53716232BB7858200B3CF75 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +91,9 @@
 		D537162E2BB7858200B3CF75 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D55D7B502BC1F3A4002D88F2 /* Utilities */,
+				D519BD862BBD027100C87B2D /* Pagination */,
+				D53716452BB8585F00B3CF75 /* Authentication */,
 				D537163E2BB78D7F00B3CF75 /* Application */,
 				D537163D2BB78D7700B3CF75 /* Intro */,
 				D53716312BB7858200B3CF75 /* ContentView.swift */,
@@ -95,6 +134,33 @@
 				D53716422BB78EAE00B3CF75 /* FirstAppIntroScreen.xcassets */,
 			);
 			path = FirstAppInroScreen;
+			sourceTree = "<group>";
+		};
+		D53716452BB8585F00B3CF75 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D519BD832BBA267100C87B2D /* SecondLoginScreen */,
+				D519BD802BB98FC800C87B2D /* BiometricAuth */,
+				D53716462BB8586B00B3CF75 /* FirstLoginScreen */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		D53716462BB8586B00B3CF75 /* FirstLoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D53716472BB8588900B3CF75 /* FirstLoginScreen.xcassets */,
+				D53716492BB8589B00B3CF75 /* FirstLoginScreen.swift */,
+			);
+			path = FirstLoginScreen;
+			sourceTree = "<group>";
+		};
+		D55D7B502BC1F3A4002D88F2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D55D7B512BC1F3C7002D88F2 /* View+Extension.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +223,7 @@
 			files = (
 				D53716372BB7858500B3CF75 /* Preview Assets.xcassets in Resources */,
 				D53716432BB78EAE00B3CF75 /* FirstAppIntroScreen.xcassets in Resources */,
+				D53716482BB8588900B3CF75 /* FirstLoginScreen.xcassets in Resources */,
 				D53716342BB7858500B3CF75 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,8 +236,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D53716412BB78DB300B3CF75 /* FirstAppIntroScreen.swift in Sources */,
+				D519BD882BBD028F00C87B2D /* GridPaginationView.swift in Sources */,
+				D55D7B522BC1F3C8002D88F2 /* View+Extension.swift in Sources */,
 				D53716322BB7858200B3CF75 /* ContentView.swift in Sources */,
+				D537164A2BB8589B00B3CF75 /* FirstLoginScreen.swift in Sources */,
+				D519BD822BB9900D00C87B2D /* BiometricAuthScreen.swift in Sources */,
 				D53716302BB7858200B3CF75 /* iOSApp.swift in Sources */,
+				D519BD852BBA268A00C87B2D /* SecondLoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
