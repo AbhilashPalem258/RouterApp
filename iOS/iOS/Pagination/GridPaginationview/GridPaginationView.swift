@@ -20,9 +20,9 @@ private struct Photo: Decodable, Identifiable {
 }
 
 @Observable
-private class ViewModel {
-    var photos: [Photo] = []
-    var lastItemID: String?
+final class GridPaginationViewModel {
+    fileprivate var photos: [Photo] = []
+    fileprivate var lastItemID: String?
     
     private let itemsPerPage: Int = 10
     private var nextPageTofetch: Int = 1
@@ -61,16 +61,22 @@ private class ViewModel {
 }
 
 struct GridPaginationView: View {
-    private let vm = ViewModel()
+    
+    @State private var viewModel: GridPaginationViewModel
+    init(vm: GridPaginationViewModel) {
+        self._viewModel = State(wrappedValue: vm)
+    }
+    
     @State private var activeID: String?
+    
     var body: some View {
         ScrollView {
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3), spacing: 10)  {
-                ForEach(vm.photos) { photo in
+                ForEach(viewModel.photos) { photo in
                     photoView(photo)
                         .onCallOnceAppear {
-                            if photo.id == vm.lastItemID {
-                                vm.fetchPhotos()
+                            if photo.id == viewModel.lastItemID {
+                                viewModel.fetchPhotos()
                             }
                         }
                 }
@@ -78,16 +84,19 @@ struct GridPaginationView: View {
             .scrollTargetLayout()
         }
         .scrollPosition(id: $activeID, anchor: .bottom)
+        .scrollIndicators(.hidden)
         .navigationTitle("Pagination Grid")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Text(vm.photos.count.description)
+                Text(viewModel.photos.count.description)
                     .font(.title2.bold())
             }
         }
+        .navigationBarBackButtonHidden()
         .onAppear {
-            vm.fetchPhotos()
+            viewModel.fetchPhotos()
         }
+        .padding(.horizontal)
     }
     
     private func photoView(_ photo: Photo) -> some View {
@@ -109,7 +118,8 @@ struct GridPaginationView: View {
             .frame(height: 120)
             
             Text(photo.author)
-                .font(.title2.bold())
+                .font(.subheadline.bold())
+                .foregroundStyle(.secondary)
                 .textScale(.secondary)
         }
     }
@@ -137,5 +147,5 @@ private struct CallOnceOnAppear: ViewModifier {
 }
 
 #Preview {
-    GridPaginationView()
+    GridPaginationView(vm: .init())
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 private struct Intro: Identifiable {
     let id: UUID = .init()
@@ -17,14 +18,19 @@ private struct Intro: Identifiable {
     var circleOffset: CGFloat = 0.0
 }
 
+protocol FirstAppIntroNavHandler: AnyObject {
+    func didSelectedAuthOption(index: Int)
+}
 
 @Observable
-private class ViewModel {
+class FirstAppIntroViewModel {
     
-    var activeIntro: Intro
+    fileprivate var activeIntro: Intro
     
     private var currentIndex: Int
     private var introCollection: [Intro]
+    
+    weak var delegate: FirstAppIntroNavHandler?
     
     init() {
         let intros: [Intro] = [
@@ -38,7 +44,7 @@ private class ViewModel {
         currentIndex = 0
     }
     
-    func textSize(_ intro: Intro) -> CGFloat {
+    fileprivate func textSize(_ intro: Intro) -> CGFloat {
         NSString(string: intro.text).size(withAttributes: [
             .font: UIFont.preferredFont(forTextStyle: .largeTitle)
         ]).width
@@ -61,7 +67,7 @@ private class ViewModel {
 
 struct FirstAppIntroScreen: View {
     
-    private var vm: ViewModel = .init()
+    let vm: FirstAppIntroViewModel
     
     private func walkthroughView(_ intro: Intro) -> some View {
         Rectangle()
@@ -90,7 +96,7 @@ struct FirstAppIntroScreen: View {
     private var bottomSheet: some View {
         VStack(spacing: 12) {
             Button {
-                
+                vm.delegate?.didSelectedAuthOption(index: 0)
             } label: {
                 Label("Continue with Apple", systemImage: "applelogo")
                     .modifier(LoginBtn(bgColor: .white))
@@ -98,7 +104,7 @@ struct FirstAppIntroScreen: View {
             .foregroundColor(.black)
             
             Button {
-                
+                vm.delegate?.didSelectedAuthOption(index: 1)
             } label: {
                 Label("Continue with Phone", systemImage: "phone.fill")
                     .modifier(LoginBtn(bgColor: .button))
@@ -106,7 +112,7 @@ struct FirstAppIntroScreen: View {
             .foregroundColor(.white)
             
             Button {
-                
+                vm.delegate?.didSelectedAuthOption(index: 2)
             } label: {
                 Label("Continue with Email", systemImage: "mail.fill")
                     .modifier(LoginBtn(bgColor: .button))
@@ -115,7 +121,7 @@ struct FirstAppIntroScreen: View {
             
             
             Button {
-                
+                vm.delegate?.didSelectedAuthOption(index: 3)
             } label: {
                 Label("Continue with Google", systemImage: "g.circle.fill")
                     .modifier(LoginBtn(bgColor: .button))
@@ -163,7 +169,7 @@ struct FirstAppIntroScreen: View {
 }
 
 #Preview {
-    FirstAppIntroScreen()
+    FirstAppIntroScreen(vm: .init())
 }
 
 private struct LoginBtn: ViewModifier {

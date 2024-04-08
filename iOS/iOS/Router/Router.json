@@ -1,0 +1,47 @@
+[
+    {
+        "id": "GlassBGLogin",
+        "coordinator_type": "GlassBGLoginCoordinator",
+        "input_type": "GlassBGLoginInput"
+    },
+    {
+        "id": "FirstAppIntro",
+        "coordinator_type": "FirstAppIntroScreenCoordinator",
+        "input_type": ""
+    },
+    {
+        "id": "BiometricAuthLogin",
+        "coordinator_type": "BiometricAuthCoordinator",
+        "input_type": ""
+    },
+    {
+        "id": "LoginUIKit.AuthenicationView",
+        "coordinator_type": "LoginKitCoordinator",
+        "input_type": ""
+    },
+    {
+        "id": "LoginKit.VerifyOTPView",
+        "coordinator_type": "VerifyOTPCoordinator",
+        "input_type": ""
+    },
+    {
+        "id": "LoginKit.ResetPasswordView",
+        "coordinator_type": "ResetPasswordCoordinator",
+        "input_type": ""
+    },
+    {
+        "id": "LoginKit.ForgotPasswordView",
+        "coordinator_type": "ForgotPasswordCoordinator",
+        "input_type": ""
+    },
+    {
+        "id": "EnterPinView",
+        "coordinator_type": "EnterPinViewCoordinator",
+        "input_type": ""
+    },
+    {
+        "id": "GridPaginationView",
+        "coordinator_type": "GridPaginationCoordinator",
+        "input_type": ""
+    },
+]

@@ -6,11 +6,24 @@
 //
 import SwiftUI
 import Foundation
+import Combine
 
-struct FirstLoginScreen: View {
+@Observable
+final class GlassBGLoginViewModel {
+    var username: String = ""
+    var password: String = ""
     
-    @State private var username: String = ""
-    @State private var password: String = ""
+    @ObservationIgnored
+    let backButtonClicked = PassthroughSubject<Void, Never>()
+}
+
+struct GlassBGLoginScreen: View {
+    
+    @State private var viewModel: GlassBGLoginViewModel
+    
+    init(viewModel: GlassBGLoginViewModel) {
+        self._viewModel = State(wrappedValue: viewModel)
+    }
     
     private func inputField(title: String, placeholder: String, text: Binding<String>, isSecure: Bool = false) -> some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -53,9 +66,9 @@ struct FirstLoginScreen: View {
             Text("Welcome!")
                 .font(.title.bold())
             
-            inputField(title: "Username", placeholder: "Username", text: $username)
+            inputField(title: "Username", placeholder: "Username", text: $viewModel.username)
             
-            inputField(title: "Password", placeholder: "Password", text: $password, isSecure: true)
+            inputField(title: "Password", placeholder: "Password", text: $viewModel.password, isSecure: true)
             
             Button {
                 
@@ -111,12 +124,21 @@ struct FirstLoginScreen: View {
             .overlay {
                 loginCardView
             }
+            .overlay(alignment: .topLeading) {
+                Button {
+                    viewModel.backButtonClicked.send()
+                } label: {
+                    Image(systemName: "arrow.backward")
+                        .font(.title2.bold())
+                        .padding()
+                }
+                .tint(.white)
+            }
     }
 }
 
 #Preview {
-    FirstLoginScreen()
-        .preferredColorScheme(.dark)
+    GlassBGLoginScreen(viewModel: .init())
 }
 
 struct LoginOptionButton: ViewModifier {
