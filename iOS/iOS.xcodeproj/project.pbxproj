@@ -20,6 +20,7 @@
 		D53716432BB78EAE00B3CF75 /* FirstAppIntroScreen.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53716422BB78EAE00B3CF75 /* FirstAppIntroScreen.xcassets */; };
 		D53716482BB8588900B3CF75 /* GlassBGLoginScreen.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53716472BB8588900B3CF75 /* GlassBGLoginScreen.xcassets */; };
 		D537164A2BB8589B00B3CF75 /* GlassBGLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53716492BB8589B00B3CF75 /* GlassBGLoginScreen.swift */; };
+		D54101AC2BC4869300357002 /* NavigationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54101AB2BC4869300357002 /* NavigationKeys.swift */; };
 		D55D7B522BC1F3C8002D88F2 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B512BC1F3C7002D88F2 /* View+Extension.swift */; };
 		D55D7B552BC1F529002D88F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B542BC1F529002D88F2 /* AppDelegate.swift */; };
 		D55D7B582BC1F5A1002D88F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B572BC1F5A1002D88F2 /* SceneDelegate.swift */; };
@@ -54,6 +55,7 @@
 		D53716422BB78EAE00B3CF75 /* FirstAppIntroScreen.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FirstAppIntroScreen.xcassets; sourceTree = "<group>"; };
 		D53716472BB8588900B3CF75 /* GlassBGLoginScreen.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GlassBGLoginScreen.xcassets; sourceTree = "<group>"; };
 		D53716492BB8589B00B3CF75 /* GlassBGLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassBGLoginScreen.swift; sourceTree = "<group>"; };
+		D54101AB2BC4869300357002 /* NavigationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationKeys.swift; sourceTree = "<group>"; };
 		D55D7B512BC1F3C7002D88F2 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		D55D7B542BC1F529002D88F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D55D7B572BC1F5A1002D88F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		D537162E2BB7858200B3CF75 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D54101AA2BC4867E00357002 /* Constants */,
 				D5221FA22BC3576D00701E19 /* DeepLinkHandler */,
 				D55D7B592BC1FAFE002D88F2 /* Info.plist */,
 				D55D7B502BC1F3A4002D88F2 /* Utilities */,
@@ -217,6 +220,14 @@
 				D55D7B612BC20D9F002D88F2 /* GlassBGLoginCoordinator.swift */,
 			);
 			path = FirstLoginScreen;
+			sourceTree = "<group>";
+		};
+		D54101AA2BC4867E00357002 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D54101AB2BC4869300357002 /* NavigationKeys.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		D55D7B502BC1F3A4002D88F2 /* Utilities */ = {
@@ -374,6 +385,7 @@
 				D519BD882BBD028F00C87B2D /* GridPaginationView.swift in Sources */,
 				D55D7B522BC1F3C8002D88F2 /* View+Extension.swift in Sources */,
 				D55D7B762BC32A1F002D88F2 /* ForgotPasswordView.swift in Sources */,
+				D54101AC2BC4869300357002 /* NavigationKeys.swift in Sources */,
 				D55D7B6D2BC30D32002D88F2 /* EnterPinViewCoordinator.swift in Sources */,
 				D5221FA42BC3578000701E19 /* OnboardingDeepLinkHandler.swift in Sources */,
 				D55D7B552BC1F529002D88F2 /* AppDelegate.swift in Sources */,

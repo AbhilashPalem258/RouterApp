@@ -24,14 +24,14 @@ final class ResetPasswordCoordinator: RoutableCoordinator {
     }
     
     private let router: any Routing
-    init(router: some Routing, context: RoutingContext?) {
+    init(router: some Routing, context: RoutingContext) {
         self.router = router
     }
     
     func onResetSubmitClick() {
         router.dismiss { parentRouter in
             do {
-                try parentRouter.push("GridPaginationView")
+                try parentRouter.push(NavigationKeys.gridPaginationView.rawValue)
             } catch {
                 debugPrint("\(error)")
             }

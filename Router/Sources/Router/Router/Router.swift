@@ -26,22 +26,18 @@ final class Router: Routing {
         self.navController = UINavigationController()
     }
     
-    func setRoot(_ id: String, params: [String: String]? = nil) throws {
+    func setRoot(_ id: String, params: [String: Any]? = nil) throws {
         let routerItem = try routerConfig.getRouterItem(with: id)
-        let type = try coordinatorTypeOf(routerItem.coordinatorType)
-        setRootCoordinator(type)
+        let type = try routerItem.getCoordinatorType()
+        var context: RoutingContext = .create(routerItem: routerItem, params: params)
+        
+        setRootCoordinator(type, context: context)
     }
     
-    func push(_ id: String, params: [String: String]? = nil) throws {
+    func push(_ id: String, params: [String: Any]? = nil) throws {
         let routerItem = try routerConfig.getRouterItem(with: id)
-        let type = try coordinatorTypeOf(routerItem.coordinatorType)
-        var context: RoutingContext? = nil
-        if let params, !params.isEmpty, !routerItem.inputType.isEmpty  {
-            let jsonData = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
-            let inputType = try inputTypeOf(routerItem.inputType)
-            let model = try JSONDecoder().decode(inputType, from: jsonData)
-            context = RoutingContext(data: model)
-        }
+        let type = try routerItem.getCoordinatorType()
+        var context: RoutingContext = .create(routerItem: routerItem, params: params)
         
         pushCoordinator(type, context: context)
     }
@@ -55,16 +51,10 @@ final class Router: Routing {
         }
     }
     
-    func present(_ id: String, params: [String: String]? = nil, completion: ((any Routing) -> Void)? = nil) throws {
+    func present(_ id: String, params: [String: Any]? = nil, completion: ((any Routing) -> Void)? = nil) throws {
         let routerItem = try routerConfig.getRouterItem(with: id)
-        let type = try coordinatorTypeOf(routerItem.coordinatorType)
-        var context: RoutingContext? = nil
-        if let params, !params.isEmpty, !routerItem.inputType.isEmpty  {
-            let jsonData = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
-            let inputType = try inputTypeOf(routerItem.inputType)
-            let model = try JSONDecoder().decode(inputType, from: jsonData)
-            context = RoutingContext(data: model)
-        }
+        let type = try routerItem.getCoordinatorType()
+        var context: RoutingContext = .create(routerItem: routerItem, params: params)
         
         try presentCoordinator(type, context: context, completion: completion)
     }
@@ -100,19 +90,5 @@ final class Router: Routing {
         self.childRouter = nil
         self.coordinatorRef.removeAll()
         self.parent = nil
-    }
-    
-    func coordinatorTypeOf(_ name: String) throws -> RoutableCoordinator.Type {
-        guard let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String, let type: RoutableCoordinator.Type = NSClassFromString("\(namespace).\(name)") as? RoutableCoordinator.Type else {
-            throw "Failed to get coordinator type for \(name)"
-        }
-        return type
-    }
-    
-    func inputTypeOf(_ name: String) throws -> Decodable.Type {
-        guard let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String, let type: Decodable.Type = NSClassFromString("\(namespace).\(name)") as? Decodable.Type else {
-            throw "Failed to get input type for \(name)"
-        }
-        return type
     }
 }

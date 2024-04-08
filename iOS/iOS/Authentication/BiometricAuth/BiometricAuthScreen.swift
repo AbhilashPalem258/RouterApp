@@ -12,6 +12,9 @@ import Combine
 final class BiometricAuthViewModel {
     @ObservationIgnored
     let enterPinSelected = PassthroughSubject<Void, Never>()
+    
+    @ObservationIgnored
+    let backButtonClicked = PassthroughSubject<Void, Never>()
 }
 
 struct BiometricAuthScreen: View {
@@ -40,6 +43,9 @@ struct BiometricAuthScreen: View {
                 .buttonStyle(.borderedProminent)
             }
             .frame(width: size.width, height: size.height)
+            .backButton {
+                viewModel.backButtonClicked.send()
+            }
         }
     }
 }

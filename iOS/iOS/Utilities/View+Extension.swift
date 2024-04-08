@@ -39,4 +39,18 @@ extension View {
             self
         }
     }
+    
+    func backButton(action: @escaping () -> Void) -> some View {
+        self
+            .overlay(alignment: .topLeading) {
+                Button {
+                    action()
+                } label: {
+                    Image(systemName: "arrow.backward")
+                        .font(.title2.bold())
+                        .padding()
+                }
+                .tint(.white)
+            }
+    }
 }

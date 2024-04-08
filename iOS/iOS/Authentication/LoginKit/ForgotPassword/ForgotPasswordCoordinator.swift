@@ -23,13 +23,13 @@ final class ForgotPasswordCoordinator: RoutableCoordinator {
     }
     
     private let router: any Routing
-    init(router: some Routing, context: RoutingContext?) {
+    init(router: some Routing, context: RoutingContext) {
         self.router = router
     }
     
     func onSubmitClick() {
         do {
-            try router.push("LoginKit.VerifyOTPView")
+            try router.push(NavigationKeys.loginKitVerifyOTPView.rawValue)
         } catch {
             debugPrint("\(error)")
         }

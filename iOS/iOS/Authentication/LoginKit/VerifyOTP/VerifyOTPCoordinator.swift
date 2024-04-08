@@ -24,13 +24,13 @@ final class VerifyOTPCoordinator: RoutableCoordinator {
     }
     
     private let router: any Routing
-    init(router: some Routing, context: RoutingContext?) {
+    init(router: some Routing, context: RoutingContext) {
         self.router = router
     }
     
     func onResetSubmitClick() {
         do {
-            try router.push("LoginKit.ResetPasswordView")
+            try router.push(NavigationKeys.loginKitResetPasswordView.rawValue)
         } catch {
             debugPrint("\(error)")
         }

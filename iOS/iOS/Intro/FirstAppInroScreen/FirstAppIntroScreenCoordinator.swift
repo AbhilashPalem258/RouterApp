@@ -23,7 +23,7 @@ final class FirstAppIntroScreenCoordinator: RoutableCoordinator {
     private var cancellables = Set<AnyCancellable>()
 
     
-    init(router: some Routing, context: RoutingContext?) {
+    init(router: some Routing, context: RoutingContext) {
         self.router = router
     }
     
@@ -35,7 +35,7 @@ final class FirstAppIntroScreenCoordinator: RoutableCoordinator {
     
     func navigateToAppleAuth() {
         do {
-            try router.push("GlassBGLogin")
+            try router.push(NavigationKeys.glassBGLogin.rawValue)
         } catch {
             debugPrint("\(error)")
         }
@@ -43,7 +43,7 @@ final class FirstAppIntroScreenCoordinator: RoutableCoordinator {
     
     func navigateToPhoneAuth() {
         do {
-            try router.present("BiometricAuthLogin", completion: nil)
+            try router.present(NavigationKeys.biometricAuthLogin.rawValue, completion: nil)
         } catch {
             debugPrint("\(error)")
         }
@@ -51,14 +51,18 @@ final class FirstAppIntroScreenCoordinator: RoutableCoordinator {
     
     func navigateToEmailAuth() {
         do {
-            try router.present("LoginUIKit.AuthenicationView", completion: nil)
+            try router.present(NavigationKeys.loginUIKitAuthenicationView.rawValue, completion: nil)
         } catch {
             debugPrint("\(error)")
         }
     }
     
     func navigateToGoogleAuth() {
-        
+        do {
+            try router.push(NavigationKeys.gridPaginationView.rawValue)
+        } catch {
+            debugPrint("\(error)")
+        }
     }
 }
 extension FirstAppIntroScreenCoordinator: FirstAppIntroNavHandler {

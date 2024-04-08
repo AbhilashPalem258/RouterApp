@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 import SwiftUI
 
 private struct Photo: Decodable, Identifiable {
@@ -27,6 +28,9 @@ final class GridPaginationViewModel {
     private let itemsPerPage: Int = 10
     private var nextPageTofetch: Int = 1
     private var allItemsFetched: Bool = false
+    
+    @ObservationIgnored
+    let backButtonClicked = PassthroughSubject<Void, Never>()
     
     func fetchPhotos() {
         Task {
@@ -97,6 +101,9 @@ struct GridPaginationView: View {
             viewModel.fetchPhotos()
         }
         .padding(.horizontal)
+        .backButton {
+            viewModel.backButtonClicked.send()
+        }
     }
     
     private func photoView(_ photo: Photo) -> some View {

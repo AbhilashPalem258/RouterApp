@@ -6,33 +6,59 @@
 //
 
 import SwiftUI
+import Combine
 
 enum LoginKit {
     
+    @Observable
+    final class AuthenicationViewModel {
+        var showSignUp: Bool = false
+        
+        @ObservationIgnored
+        let forgotPasswordSelected = PassthroughSubject<Void, Never>()
+        
+        @ObservationIgnored
+        let loginSelected = PassthroughSubject<Void, Never>()
+        
+        @ObservationIgnored
+        let verifyClicked = PassthroughSubject<Void, Never>()
+        
+        @ObservationIgnored
+        let backButtonClicked = PassthroughSubject<Void, Never>()
+    }
+    
     struct AuthenicationView: View {
-        @State private var showSignUp: Bool = false
+        
+        @State private var viewModel: AuthenicationViewModel
+        init(viewModel: AuthenicationViewModel) {
+            self._viewModel = State(wrappedValue: viewModel)
+        }
+        
         var body: some View {
             NavigationStack {
-                LoginScreen(showSignup: $showSignUp)
-                    .navigationDestination(isPresented: $showSignUp) {
-                        SignUpScreen(showSignup: $showSignUp)
+                LoginScreen(viewModel: viewModel)
+                    .navigationDestination(isPresented: $viewModel.showSignUp) {
+                        SignUpScreen(viewModel: viewModel)
                             .toolbar(.hidden, for: .navigationBar)
                     }
             }
-            .overlay(alignment: showSignUp ? .topTrailing : .topLeading) {
+            .overlay(alignment: viewModel.showSignUp ? .topTrailing : .topLeading) {
                 Circle()
                     .fill(.black)
                     .frame(width: 200, height: 200)
                     .blur(radius: 8)
-                    .offset(x: showSignUp ? 90 : -90, y: -90)
-                    .animation(.snappy, value: showSignUp)
+                    .offset(x: viewModel.showSignUp ? 90 : -90, y: -90)
+                    .animation(.snappy, value: viewModel.showSignUp)
+            }
+            .backButton {
+                viewModel.backButtonClicked.send()
             }
         }
     }
     
     struct LoginScreen: View {
         
-        @Binding var showSignup: Bool
+        @Bindable var viewModel: AuthenicationViewModel
         @State private var userName: String = ""
         @State private var password: String = ""
         
@@ -51,6 +77,7 @@ enum LoginKit {
                 InputField(icon: "lock", iconTint: .gray, placeholder: "Password", text: $password, isSecure: true)
                 
                 Button {
+                    viewModel.forgotPasswordSelected.send()
                 } label: {
                     Text("Forgot Password?")
                         .font(.callout.bold())
@@ -58,8 +85,8 @@ enum LoginKit {
                 }
                 .hSpacing(alignment: .trailing)
                 
-                GradientButton(title: "Login") {
-                    print("Login Tapped")
+                GradientButton(title: "Verify") {
+                    viewModel.verifyClicked.send()
                 }
                 .hSpacing(alignment: .trailing)
                 
@@ -71,9 +98,9 @@ enum LoginKit {
                         .foregroundStyle(.gray)
                     
                     Button {
-                        showSignup = true
+                        viewModel.showSignUp = true
                     } label: {
-                        Text("Sign Up")
+                        Text("Login")
                             .font(.callout.bold())
                             .padding(4)
                     }
@@ -81,6 +108,7 @@ enum LoginKit {
                 .hSpacing()
             }
             .tint(.black)
+            .foregroundStyle(.black)
             .hSpacing(alignment: .leading)
             .padding(.horizontal, 16)
         }
@@ -96,7 +124,7 @@ enum LoginKit {
     }
     
     struct SignUpScreen: View {
-        @Binding var showSignup: Bool
+        @Bindable var viewModel: AuthenicationViewModel
         @State private var userName: String = ""
         @State private var password: String = ""
         
@@ -121,7 +149,7 @@ enum LoginKit {
                         InputField(icon: "lock", iconTint: .gray, placeholder: "Password", text: $password, isSecure: true)
 
                         GradientButton(title: "Login") {
-                            print("Login Tapped")
+                            viewModel.loginSelected.send()
                         }
                         .hSpacing(alignment: .trailing)
                         
@@ -133,7 +161,7 @@ enum LoginKit {
                                 .foregroundStyle(.gray)
                             
                             Button {
-                                showSignup = false
+                                viewModel.showSignUp = false
                             } label: {
                                 Text("Login")
                                     .font(.callout.bold())
@@ -143,6 +171,7 @@ enum LoginKit {
                         .hSpacing()
                     }
                     .tint(.black)
+                    .foregroundStyle(.black)
                     .hSpacing(alignment: .leading)
                     .padding(.horizontal, 16)
                 }

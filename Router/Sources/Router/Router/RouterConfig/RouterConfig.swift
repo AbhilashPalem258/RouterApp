@@ -31,4 +31,18 @@ struct RouterConfigItem: Decodable {
     let id: String
     let coordinatorType: String
     let inputType: String
+    
+    func getCoordinatorType() throws -> RoutableCoordinator.Type {
+        guard let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String, let type: RoutableCoordinator.Type = NSClassFromString("\(namespace).\(coordinatorType)") as? RoutableCoordinator.Type else {
+            throw "Failed to get coordinator type for \(coordinatorType)"
+        }
+        return type
+    }
+    
+    func getInputType() throws -> Decodable.Type {
+        guard let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String, let type: Decodable.Type = NSClassFromString("\(namespace).\(inputType)") as? Decodable.Type else {
+            throw "Failed to get input type for \(inputType)"
+        }
+        return type
+    }
 }

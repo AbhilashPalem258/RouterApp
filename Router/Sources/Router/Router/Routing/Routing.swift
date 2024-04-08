@@ -8,10 +8,10 @@
 import Foundation
 
 public protocol Routing: AnyObject {
-    func setRoot(_ id: String, params: [String: String]?) throws
-    func push(_ id: String, params: [String: String]?) throws
+    func setRoot(_ id: String, params: [String: Any]?) throws
+    func push(_ id: String, params: [String: Any]?) throws
     func pop(animated: Bool)
-    func present(_ id: String, params: [String: String]?, completion: ((any Routing) -> Void)?) throws
+    func present(_ id: String, params: [String: Any]?, completion: ((any Routing) -> Void)?) throws
     func dismiss(completion: ((any Routing) -> Void)?)
     func dismissChild(completion: ((any Routing) -> Void)?)
     

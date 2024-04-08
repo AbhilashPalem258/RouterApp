@@ -37,13 +37,13 @@ final class EnterPinViewCoordinator: RoutableCoordinator {
     }
     
     private let router: any Routing
-    init(router: some Routing, context: RoutingContext?) {
+    init(router: some Routing, context: RoutingContext) {
         self.router = router
     }
     
     func onSuccessfulAuthentication() {
         do {
-            try router.push("GridPaginationView")
+            try router.push(NavigationKeys.gridPaginationView.rawValue)
         } catch {
             debugPrint("\(error)")
         }
@@ -55,7 +55,7 @@ final class EnterPinViewCoordinator: RoutableCoordinator {
     
     func onForgotPinPress() {
         do {
-            try router.push("LoginKit.ForgotPasswordView")
+            try router.push(NavigationKeys.loginKitForgotPasswordView.rawValue)
         } catch {
             debugPrint("\(error)")
         }
