@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Router
 
 final class GlassBGLoginInput: Decodable {
     let username: String
@@ -14,12 +15,12 @@ final class GlassBGLoginInput: Decodable {
 }
 
 final class GlassBGLoginCoordinator: RoutableCoordinator {
-    init(router: Router, context: Router.Context?) {
+    init(router: some Routing, context: RoutingContext?) {
         self.input = context?.data as? GlassBGLoginInput
         self.router = router
     }
     
-    private let router: Router
+    private let router: any Routing
     private var input: GlassBGLoginInput?
     private var cancellables = Set<AnyCancellable>()
     

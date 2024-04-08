@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Router
 
 final class ForgotPasswordCoordinator: RoutableCoordinator {
     private var cancellables = Set<AnyCancellable>()
@@ -21,12 +22,16 @@ final class ForgotPasswordCoordinator: RoutableCoordinator {
         return LoginKit.ForgotPasswordView(viewModel: viewModel).viewController()
     }
     
-    private let router: Router
-    init(router: Router, context: Router.Context?) {
+    private let router: any Routing
+    init(router: some Routing, context: RoutingContext?) {
         self.router = router
     }
     
     func onSubmitClick() {
-        router.push("LoginKit.VerifyOTPView")
+        do {
+            try router.push("LoginKit.VerifyOTPView")
+        } catch {
+            debugPrint("\(error)")
+        }
     }
 }

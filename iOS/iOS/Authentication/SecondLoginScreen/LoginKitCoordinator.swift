@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import Router
 
 final class LoginKitCoordinator: RoutableCoordinator {
-    init(router: Router, context: Router.Context?) {
+    init(router: some Routing, context: RoutingContext?) {
         self.router = router
     }
     
-    var router: Router
+    var router: any Routing
     
     func rootViewController() -> UIViewController {
         LoginKit.AuthenicationView().viewController()

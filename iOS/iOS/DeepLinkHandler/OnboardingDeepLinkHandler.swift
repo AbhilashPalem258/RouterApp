@@ -6,14 +6,24 @@
 //
 
 import Foundation
+import DeepLink
+import Router
 
-protocol DeepLinkHandling {
-    func handle(incomingURL: URL, router: Router)
-}
-
-struct DeepLinkHandler: DeepLinkHandling {
-    func handle(incomingURL: URL, router: Router) {
-        guard let components = URLComponents(url: incomingURL, resolvingAgainstBaseURL: true) else {
+enum OnboardingDeepLinkHandler: DeepLinkHandling {
+    
+    private static var flow: String {
+        "OnboardingFlow"
+    }
+    
+    static func canOpenURL(_ url: URL) -> Bool {
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
+            return false
+        }
+        return components.path.contains(flow)
+    }
+    
+    static func openURL(_ url: URL, router: some Routing) {
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
             return
         }
 
@@ -41,7 +51,11 @@ struct DeepLinkHandler: DeepLinkHandling {
         }
         params?["id"] = nil
         router.dismissChild { parent in
-            router.present(id, params: params)
+            do {
+                try router.present(id, params: params, completion: nil)
+            } catch {
+                debugPrint("Failed to route to \(id) with error \(error)")
+            }
         }
     }
 }

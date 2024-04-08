@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Router
 
 final class ResetPasswordCoordinator: RoutableCoordinator {
     
@@ -22,14 +23,18 @@ final class ResetPasswordCoordinator: RoutableCoordinator {
         return LoginKit.ResetPasswordView(viewModel: viewModel).viewController()
     }
     
-    private let router: Router
-    init(router: Router, context: Router.Context?) {
+    private let router: any Routing
+    init(router: some Routing, context: RoutingContext?) {
         self.router = router
     }
     
     func onResetSubmitClick() {
         router.dismiss { parentRouter in
-            parentRouter.push("GridPaginationView")
+            do {
+                try parentRouter.push("GridPaginationView")
+            } catch {
+                debugPrint("\(error)")
+            }
         }
     }
 }

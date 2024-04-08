@@ -10,7 +10,8 @@
 		D519BD822BB9900D00C87B2D /* BiometricAuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519BD812BB9900D00C87B2D /* BiometricAuthScreen.swift */; };
 		D519BD852BBA268A00C87B2D /* SecondLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519BD842BBA268A00C87B2D /* SecondLoginScreen.swift */; };
 		D519BD882BBD028F00C87B2D /* GridPaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519BD872BBD028F00C87B2D /* GridPaginationView.swift */; };
-		D5221FA42BC3578000701E19 /* DeepLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5221FA32BC3578000701E19 /* DeepLinkHandler.swift */; };
+		D5221FA42BC3578000701E19 /* OnboardingDeepLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5221FA32BC3578000701E19 /* OnboardingDeepLinkHandler.swift */; };
+		D5221FA82BC4214C00701E19 /* Router in Frameworks */ = {isa = PBXBuildFile; productRef = D5221FA72BC4214C00701E19 /* Router */; };
 		D53716302BB7858200B3CF75 /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D537162F2BB7858200B3CF75 /* iOSApp.swift */; };
 		D53716322BB7858200B3CF75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53716312BB7858200B3CF75 /* ContentView.swift */; };
 		D53716342BB7858500B3CF75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53716332BB7858500B3CF75 /* Assets.xcassets */; };
@@ -22,13 +23,10 @@
 		D55D7B522BC1F3C8002D88F2 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B512BC1F3C7002D88F2 /* View+Extension.swift */; };
 		D55D7B552BC1F529002D88F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B542BC1F529002D88F2 /* AppDelegate.swift */; };
 		D55D7B582BC1F5A1002D88F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B572BC1F5A1002D88F2 /* SceneDelegate.swift */; };
-		D55D7B5B2BC1FDFB002D88F2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B5A2BC1FDFB002D88F2 /* Router.swift */; };
-		D55D7B5E2BC20421002D88F2 /* RoutableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B5D2BC20421002D88F2 /* RoutableCoordinator.swift */; };
 		D55D7B602BC204B6002D88F2 /* FirstAppIntroScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B5F2BC204B6002D88F2 /* FirstAppIntroScreenCoordinator.swift */; };
 		D55D7B622BC20D9F002D88F2 /* GlassBGLoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B612BC20D9F002D88F2 /* GlassBGLoginCoordinator.swift */; };
 		D55D7B642BC20E2D002D88F2 /* BiometricAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B632BC20E2D002D88F2 /* BiometricAuthCoordinator.swift */; };
 		D55D7B662BC20E86002D88F2 /* LoginKitCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B652BC20E86002D88F2 /* LoginKitCoordinator.swift */; };
-		D55D7B682BC30922002D88F2 /* Router.json in Resources */ = {isa = PBXBuildFile; fileRef = D55D7B672BC2E293002D88F2 /* Router.json */; };
 		D55D7B6B2BC30BA5002D88F2 /* EnterPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B6A2BC30BA5002D88F2 /* EnterPinView.swift */; };
 		D55D7B6D2BC30D32002D88F2 /* EnterPinViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B6C2BC30D32002D88F2 /* EnterPinViewCoordinator.swift */; };
 		D55D7B702BC30EAB002D88F2 /* GridPaginationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D7B6F2BC30EAB002D88F2 /* GridPaginationCoordinator.swift */; };
@@ -45,7 +43,8 @@
 		D519BD812BB9900D00C87B2D /* BiometricAuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthScreen.swift; sourceTree = "<group>"; };
 		D519BD842BBA268A00C87B2D /* SecondLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondLoginScreen.swift; sourceTree = "<group>"; };
 		D519BD872BBD028F00C87B2D /* GridPaginationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridPaginationView.swift; sourceTree = "<group>"; };
-		D5221FA32BC3578000701E19 /* DeepLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkHandler.swift; sourceTree = "<group>"; };
+		D5221FA32BC3578000701E19 /* OnboardingDeepLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDeepLinkHandler.swift; sourceTree = "<group>"; };
+		D5221FA52BC397FB00701E19 /* Router */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Router; path = ../Router; sourceTree = "<group>"; };
 		D537162C2BB7858200B3CF75 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D537162F2BB7858200B3CF75 /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		D53716312BB7858200B3CF75 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,13 +58,10 @@
 		D55D7B542BC1F529002D88F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D55D7B572BC1F5A1002D88F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D55D7B592BC1FAFE002D88F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		D55D7B5A2BC1FDFB002D88F2 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		D55D7B5D2BC20421002D88F2 /* RoutableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutableCoordinator.swift; sourceTree = "<group>"; };
 		D55D7B5F2BC204B6002D88F2 /* FirstAppIntroScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppIntroScreenCoordinator.swift; sourceTree = "<group>"; };
 		D55D7B612BC20D9F002D88F2 /* GlassBGLoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassBGLoginCoordinator.swift; sourceTree = "<group>"; };
 		D55D7B632BC20E2D002D88F2 /* BiometricAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthCoordinator.swift; sourceTree = "<group>"; };
 		D55D7B652BC20E86002D88F2 /* LoginKitCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKitCoordinator.swift; sourceTree = "<group>"; };
-		D55D7B672BC2E293002D88F2 /* Router.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Router.json; sourceTree = "<group>"; };
 		D55D7B6A2BC30BA5002D88F2 /* EnterPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPinView.swift; sourceTree = "<group>"; };
 		D55D7B6C2BC30D32002D88F2 /* EnterPinViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPinViewCoordinator.swift; sourceTree = "<group>"; };
 		D55D7B6F2BC30EAB002D88F2 /* GridPaginationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridPaginationCoordinator.swift; sourceTree = "<group>"; };
@@ -83,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5221FA82BC4214C00701E19 /* Router in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,16 +116,25 @@
 		D5221FA22BC3576D00701E19 /* DeepLinkHandler */ = {
 			isa = PBXGroup;
 			children = (
-				D5221FA32BC3578000701E19 /* DeepLinkHandler.swift */,
+				D5221FA32BC3578000701E19 /* OnboardingDeepLinkHandler.swift */,
 			);
 			path = DeepLinkHandler;
+			sourceTree = "<group>";
+		};
+		D5221FA62BC4214C00701E19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D53716232BB7858200B3CF75 = {
 			isa = PBXGroup;
 			children = (
+				D5221FA52BC397FB00701E19 /* Router */,
 				D537162E2BB7858200B3CF75 /* iOS */,
 				D537162D2BB7858200B3CF75 /* Products */,
+				D5221FA62BC4214C00701E19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,9 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				D5221FA22BC3576D00701E19 /* DeepLinkHandler */,
-				D55D7B5C2BC20414002D88F2 /* Coordinator */,
 				D55D7B592BC1FAFE002D88F2 /* Info.plist */,
-				D55D7B532BC1F498002D88F2 /* Router */,
 				D55D7B502BC1F3A4002D88F2 /* Utilities */,
 				D519BD862BBD027100C87B2D /* Pagination */,
 				D53716452BB8585F00B3CF75 /* Authentication */,
@@ -224,15 +228,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		D55D7B532BC1F498002D88F2 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				D55D7B5A2BC1FDFB002D88F2 /* Router.swift */,
-				D55D7B672BC2E293002D88F2 /* Router.json */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		D55D7B562BC1F58B002D88F2 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,14 +235,6 @@
 				D55D7B572BC1F5A1002D88F2 /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		D55D7B5C2BC20414002D88F2 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				D55D7B5D2BC20421002D88F2 /* RoutableCoordinator.swift */,
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		D55D7B692BC30B92002D88F2 /* EnterPinView */ = {
@@ -321,6 +308,9 @@
 			dependencies = (
 			);
 			name = iOS;
+			packageProductDependencies = (
+				D5221FA72BC4214C00701E19 /* Router */,
+			);
 			productName = iOS;
 			productReference = D537162C2BB7858200B3CF75 /* iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -366,7 +356,6 @@
 				D53716372BB7858500B3CF75 /* Preview Assets.xcassets in Resources */,
 				D53716432BB78EAE00B3CF75 /* FirstAppIntroScreen.xcassets in Resources */,
 				D53716482BB8588900B3CF75 /* GlassBGLoginScreen.xcassets in Resources */,
-				D55D7B682BC30922002D88F2 /* Router.json in Resources */,
 				D53716342BB7858500B3CF75 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,14 +369,13 @@
 			files = (
 				D55D7B662BC20E86002D88F2 /* LoginKitCoordinator.swift in Sources */,
 				D55D7B702BC30EAB002D88F2 /* GridPaginationCoordinator.swift in Sources */,
-				D55D7B5B2BC1FDFB002D88F2 /* Router.swift in Sources */,
 				D55D7B622BC20D9F002D88F2 /* GlassBGLoginCoordinator.swift in Sources */,
 				D53716412BB78DB300B3CF75 /* FirstAppIntroScreen.swift in Sources */,
 				D519BD882BBD028F00C87B2D /* GridPaginationView.swift in Sources */,
 				D55D7B522BC1F3C8002D88F2 /* View+Extension.swift in Sources */,
 				D55D7B762BC32A1F002D88F2 /* ForgotPasswordView.swift in Sources */,
 				D55D7B6D2BC30D32002D88F2 /* EnterPinViewCoordinator.swift in Sources */,
-				D5221FA42BC3578000701E19 /* DeepLinkHandler.swift in Sources */,
+				D5221FA42BC3578000701E19 /* OnboardingDeepLinkHandler.swift in Sources */,
 				D55D7B552BC1F529002D88F2 /* AppDelegate.swift in Sources */,
 				D53716322BB7858200B3CF75 /* ContentView.swift in Sources */,
 				D55D7B7C2BC32A48002D88F2 /* ForgotPasswordCoordinator.swift in Sources */,
@@ -399,7 +387,6 @@
 				D537164A2BB8589B00B3CF75 /* GlassBGLoginScreen.swift in Sources */,
 				D55D7B7E2BC32A56002D88F2 /* VerifyOTPCoordinator.swift in Sources */,
 				D55D7B602BC204B6002D88F2 /* FirstAppIntroScreenCoordinator.swift in Sources */,
-				D55D7B5E2BC20421002D88F2 /* RoutableCoordinator.swift in Sources */,
 				D55D7B822BC32BFF002D88F2 /* Binding+Extensions.swift in Sources */,
 				D519BD822BB9900D00C87B2D /* BiometricAuthScreen.swift in Sources */,
 				D53716302BB7858200B3CF75 /* iOSApp.swift in Sources */,
@@ -612,6 +599,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D5221FA72BC4214C00701E19 /* Router */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Router;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D53716242BB7858200B3CF75 /* Project object */;
 }

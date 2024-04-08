@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Router
 
 final class VerifyOTPCoordinator: RoutableCoordinator {
     
@@ -22,12 +23,16 @@ final class VerifyOTPCoordinator: RoutableCoordinator {
         return LoginKit.VerifyOTPView(viewModel: viewModel).viewController()
     }
     
-    private let router: Router
-    init(router: Router, context: Router.Context?) {
+    private let router: any Routing
+    init(router: some Routing, context: RoutingContext?) {
         self.router = router
     }
     
     func onResetSubmitClick() {
-        router.push("LoginKit.ResetPasswordView")
+        do {
+            try router.push("LoginKit.ResetPasswordView")
+        } catch {
+            debugPrint("\(error)")
+        }
     }
 }

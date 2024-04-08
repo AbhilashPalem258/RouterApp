@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Router
 
 final class EnterPinViewCoordinator: RoutableCoordinator {
     
@@ -35,20 +36,28 @@ final class EnterPinViewCoordinator: RoutableCoordinator {
         return EnterPinView(viewModel: viewModel).viewController()
     }
     
-    private let router: Router
-    init(router: Router, context: Router.Context?) {
+    private let router: any Routing
+    init(router: some Routing, context: RoutingContext?) {
         self.router = router
     }
     
     func onSuccessfulAuthentication() {
-        router.push("GridPaginationView")
+        do {
+            try router.push("GridPaginationView")
+        } catch {
+            debugPrint("\(error)")
+        }
     }
     
     func onBackPress() {
-        router.pop()
+        router.pop(animated: true)
     }
     
     func onForgotPinPress() {
-        router.push("LoginKit.ForgotPasswordView")
+        do {
+            try router.push("LoginKit.ForgotPasswordView")
+        } catch {
+            debugPrint("\(error)")
+        }
     }
 }

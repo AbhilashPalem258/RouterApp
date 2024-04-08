@@ -7,14 +7,15 @@
 
 import Combine
 import UIKit
+import Router
 
 final class GridPaginationCoordinator: RoutableCoordinator {
     func rootViewController() -> UIViewController {
         let viewModel = GridPaginationViewModel()
         return GridPaginationView(vm: viewModel).viewController(navBarHidden: false)
     }
-    private let router: Router
-    init(router: Router, context: Router.Context?) {
+    private let router: any Routing
+    init(router: some Routing, context: RoutingContext?) {
         self.router = router
     }
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Router
 
 private enum AuthOption: Int {
     case apple
@@ -17,12 +18,12 @@ private enum AuthOption: Int {
 
 final class FirstAppIntroScreenCoordinator: RoutableCoordinator {
     
-    private let router: Router
+    private let router: any Routing
     
     private var cancellables = Set<AnyCancellable>()
 
     
-    init(router: Router, context: Router.Context?) {
+    init(router: some Routing, context: RoutingContext?) {
         self.router = router
     }
     
@@ -33,15 +34,27 @@ final class FirstAppIntroScreenCoordinator: RoutableCoordinator {
     }
     
     func navigateToAppleAuth() {
-        router.push("GlassBGLogin")
+        do {
+            try router.push("GlassBGLogin")
+        } catch {
+            debugPrint("\(error)")
+        }
     }
     
     func navigateToPhoneAuth() {
-        router.present("BiometricAuthLogin")
+        do {
+            try router.present("BiometricAuthLogin", completion: nil)
+        } catch {
+            debugPrint("\(error)")
+        }
     }
     
     func navigateToEmailAuth() {
-        router.present("LoginUIKit.AuthenicationView")
+        do {
+            try router.present("LoginUIKit.AuthenicationView", completion: nil)
+        } catch {
+            debugPrint("\(error)")
+        }
     }
     
     func navigateToGoogleAuth() {

@@ -7,13 +7,14 @@
 
 import UIKit
 import Combine
+import Router
 
 final class BiometricAuthCoordinator: RoutableCoordinator {
     
-    private var router: Router
+    private var router: any Routing
     private var cancellables = Set<AnyCancellable>()
     
-    init(router: Router, context: Router.Context?) {
+    init(router: some Routing, context: RoutingContext?) {
         self.router = router
     }
     
@@ -29,6 +30,10 @@ final class BiometricAuthCoordinator: RoutableCoordinator {
     }
     
     func showEnterPinView() {
-        router.present("EnterPinView")
+        do {
+            try router.present("EnterPinView", completion: nil)
+        } catch {
+            debugPrint("\(error)")
+        }
     }
 }
