@@ -34,10 +34,10 @@ class FirstAppIntroViewModel {
     
     init() {
         let intros: [Intro] = [
-            .init(text: "Whatever", textColor: Color(.color1), backgroundColor: Color(.color4)),
-            .init(text: "Happens", textColor: Color(.color2), backgroundColor: Color(.color1)),
-            .init(text: "Take", textColor: Color(.color3), backgroundColor: Color(.color2)),
-            .init(text: "Responsibility", textColor: Color(.color4), backgroundColor: Color(.color3)),
+            .init(text: "Lorem", textColor: Color(.color1), backgroundColor: Color(.color4)),
+            .init(text: "consectetur", textColor: Color(.color2), backgroundColor: Color(.color1)),
+            .init(text: "aute", textColor: Color(.color3), backgroundColor: Color(.color2)),
+            .init(text: "laudantium", textColor: Color(.color4), backgroundColor: Color(.color3)),
         ]
         introCollection = intros
         activeIntro = intros[0]

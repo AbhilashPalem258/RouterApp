@@ -25,7 +25,7 @@ final class LoginKitCoordinator: RoutableCoordinator {
                 do {
                     try self?.router.push(NavigationKeys.loginUIKitAuthenicationView.rawValue)
                 } catch {
-                    debugPrint("\(error)")
+                    logError("Failed to navigate to \(NavigationKeys.loginUIKitAuthenicationView.rawValue) error: \(error)")
                 }
             }
             .store(in: &cancellables)
@@ -35,7 +35,7 @@ final class LoginKitCoordinator: RoutableCoordinator {
                 do {
                     try self?.router.present(NavigationKeys.loginKitForgotPasswordView.rawValue, completion: nil)
                 } catch {
-                    debugPrint("\(error)")
+                    logError("Failed to navigate to \(NavigationKeys.loginKitForgotPasswordView.rawValue) error: \(error)")
                 }
             }
             .store(in: &cancellables)
@@ -45,7 +45,7 @@ final class LoginKitCoordinator: RoutableCoordinator {
                 do {
                     try self?.router.push(NavigationKeys.gridPaginationView.rawValue)
                 } catch {
-                    debugPrint("\(error)")
+                    logError("Failed to navigate to \(NavigationKeys.gridPaginationView.rawValue) error: \(error)")
                 }
             }
             .store(in: &cancellables)

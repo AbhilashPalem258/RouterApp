@@ -37,9 +37,13 @@ final class BiometricAuthCoordinator: RoutableCoordinator {
     
     func showEnterPinView() {
         do {
-            try router.present(NavigationKeys.enterPinView.rawValue, completion: nil)
+            try router.present(NavigationKeys.enterPinView.rawValue, params: [
+                "name": "Name",
+                "age": 25,
+                "seniorCitizen": false
+            ], completion: nil)
         } catch {
-            debugPrint("\(error)")
+            logError("Failed to navigate to \(NavigationKeys.enterPinView.rawValue) error: \(error)")
         }
     }
     

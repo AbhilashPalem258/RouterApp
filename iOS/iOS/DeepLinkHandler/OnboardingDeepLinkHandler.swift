@@ -30,7 +30,7 @@ enum OnboardingDeepLinkHandler: DeepLinkHandling {
 
         // Check for specific URL components that you need.
         let path = components.path
-        var params = components.queryItems?.reduce(into: [String: String](), { partialResult, queryItem in
+        var params = components.queryItems?.reduce(into: [String: Any](), { partialResult, queryItem in
             partialResult[queryItem.name] = queryItem.value
         })
         let scheme = components.scheme
@@ -54,7 +54,7 @@ enum OnboardingDeepLinkHandler: DeepLinkHandling {
             do {
                 try router.present(id, params: params, completion: nil)
             } catch {
-                debugPrint("Failed to route to \(id) with error \(error)")
+                logError("Failed to navigate to \(id) error: \(error)")
             }
         }
     }

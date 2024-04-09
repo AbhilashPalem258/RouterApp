@@ -19,7 +19,6 @@ private enum AuthOption: Int {
 final class FirstAppIntroScreenCoordinator: RoutableCoordinator {
     
     private let router: any Routing
-    
     private var cancellables = Set<AnyCancellable>()
 
     
@@ -37,7 +36,7 @@ final class FirstAppIntroScreenCoordinator: RoutableCoordinator {
         do {
             try router.push(NavigationKeys.glassBGLogin.rawValue)
         } catch {
-            debugPrint("\(error)")
+            logError("Failed to navigate to \(NavigationKeys.glassBGLogin.rawValue) error: \(error)")
         }
     }
     
@@ -45,7 +44,7 @@ final class FirstAppIntroScreenCoordinator: RoutableCoordinator {
         do {
             try router.present(NavigationKeys.biometricAuthLogin.rawValue, completion: nil)
         } catch {
-            debugPrint("\(error)")
+            logError("Failed to navigate to \(NavigationKeys.biometricAuthLogin.rawValue) error: \(error)")
         }
     }
     
@@ -53,7 +52,7 @@ final class FirstAppIntroScreenCoordinator: RoutableCoordinator {
         do {
             try router.present(NavigationKeys.loginUIKitAuthenicationView.rawValue, completion: nil)
         } catch {
-            debugPrint("\(error)")
+            logError("Failed to navigate to \(NavigationKeys.loginUIKitAuthenicationView.rawValue) error: \(error)")
         }
     }
     
@@ -61,7 +60,7 @@ final class FirstAppIntroScreenCoordinator: RoutableCoordinator {
         do {
             try router.push(NavigationKeys.gridPaginationView.rawValue)
         } catch {
-            debugPrint("\(error)")
+            logError("Failed to navigate to \(NavigationKeys.gridPaginationView.rawValue) error: \(error)")
         }
     }
 }

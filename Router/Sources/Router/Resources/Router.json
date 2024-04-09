@@ -37,7 +37,7 @@
     {
         "id": "EnterPinView",
         "coordinator_type": "EnterPinViewCoordinator",
-        "input_type": ""
+        "input_type": "EnterPinInputModel"
     },
     {
         "id": "GridPaginationView",

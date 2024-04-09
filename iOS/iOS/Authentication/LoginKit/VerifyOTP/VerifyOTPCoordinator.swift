@@ -32,7 +32,7 @@ final class VerifyOTPCoordinator: RoutableCoordinator {
         do {
             try router.push(NavigationKeys.loginKitResetPasswordView.rawValue)
         } catch {
-            debugPrint("\(error)")
+            logError("Failed to navigate to \(NavigationKeys.loginKitResetPasswordView.rawValue) error: \(error)")
         }
     }
 }

@@ -33,7 +33,7 @@ final class ResetPasswordCoordinator: RoutableCoordinator {
             do {
                 try parentRouter.push(NavigationKeys.gridPaginationView.rawValue)
             } catch {
-                debugPrint("\(error)")
+                logError("Failed to navigate to \(NavigationKeys.gridPaginationView.rawValue) error: \(error)")
             }
         }
     }

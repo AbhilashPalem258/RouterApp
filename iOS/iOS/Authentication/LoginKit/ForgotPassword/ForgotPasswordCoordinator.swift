@@ -31,7 +31,7 @@ final class ForgotPasswordCoordinator: RoutableCoordinator {
         do {
             try router.push(NavigationKeys.loginKitVerifyOTPView.rawValue)
         } catch {
-            debugPrint("\(error)")
+            logError("Failed to navigate to \(NavigationKeys.loginKitVerifyOTPView.rawValue) error: \(error)")
         }
     }
 }

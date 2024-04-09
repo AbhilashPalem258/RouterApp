@@ -17,6 +17,7 @@ final class GlassBGLoginInput: Decodable {
 final class GlassBGLoginCoordinator: RoutableCoordinator {
     init(router: some Routing, context: RoutingContext) {
         self.input = context.data as? GlassBGLoginInput
+        logInfo("[GlassBGLoginCoordinator] RoutingContext input: \(String(describing: input)), params: \(String(describing: context.params))")
         self.router = router
     }
     

@@ -29,7 +29,7 @@ final class Router: Routing {
     func setRoot(_ id: String, params: [String: Any]? = nil) throws {
         let routerItem = try routerConfig.getRouterItem(with: id)
         let type = try routerItem.getCoordinatorType()
-        var context: RoutingContext = .create(routerItem: routerItem, params: params)
+        let context: RoutingContext = .create(routerItem: routerItem, params: params)
         
         setRootCoordinator(type, context: context)
     }
@@ -37,7 +37,7 @@ final class Router: Routing {
     func push(_ id: String, params: [String: Any]? = nil) throws {
         let routerItem = try routerConfig.getRouterItem(with: id)
         let type = try routerItem.getCoordinatorType()
-        var context: RoutingContext = .create(routerItem: routerItem, params: params)
+        let context: RoutingContext = .create(routerItem: routerItem, params: params)
         
         pushCoordinator(type, context: context)
     }
@@ -54,7 +54,7 @@ final class Router: Routing {
     func present(_ id: String, params: [String: Any]? = nil, completion: ((any Routing) -> Void)? = nil) throws {
         let routerItem = try routerConfig.getRouterItem(with: id)
         let type = try routerItem.getCoordinatorType()
-        var context: RoutingContext = .create(routerItem: routerItem, params: params)
+        let context: RoutingContext = .create(routerItem: routerItem, params: params)
         
         try presentCoordinator(type, context: context, completion: completion)
     }
