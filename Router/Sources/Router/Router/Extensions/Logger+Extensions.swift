@@ -12,6 +12,10 @@ func logError(_ message: String) {
     Logger.RouterModule.error("\(message)")
 }
 
+func logInfo(_ message: String) {
+    Logger.RouterModule.info("\(message)")
+}
+
 extension Logger {
     private static let subsystem = "com.abhilash.iOS.Router"
     static let RouterModule = Logger(subsystem: subsystem, category: "RouterModule")

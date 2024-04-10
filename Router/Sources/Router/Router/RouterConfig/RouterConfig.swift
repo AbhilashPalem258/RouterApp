@@ -6,10 +6,16 @@
 //
 
 import Foundation
+import Combine
 
-struct RouterConfig {
-    let items: [RouterConfigItem]
+class RouterConfig {
+    
+    private(set) var items: [RouterConfigItem]
+    private let routerConfigService: FIRRouterConfigService
+    private var cancellables = Set<AnyCancellable>()
+    
     init() throws {
+        routerConfigService = FIRRouterConfigService()
         guard let url = Bundle.module.url(forResource: "Router", withExtension: "json")  else {
             throw "Failed to get local router json"
         }
@@ -17,6 +23,7 @@ struct RouterConfig {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         self.items = try decoder.decode([RouterConfigItem].self, from: data)
+        self.configFirebaseRouterConfigService()
     }
     
     func getRouterItem(with id: String) throws -> RouterConfigItem {
@@ -24,6 +31,24 @@ struct RouterConfig {
             throw "Failed to get router config item for \(id)"
         }
         return self.items[index]
+    }
+    
+    private func convertDataToItems(data: Data) {
+        do {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            self.items = try decoder.decode([RouterConfigItem].self, from: data)
+        } catch {
+            logError("Failed to parse config items")
+        }
+    }
+    
+    private func configFirebaseRouterConfigService() {
+        routerConfigService.onDataChange.sink { data in
+            self.convertDataToItems(data: data)
+        }
+        .store(in: &cancellables)
+        routerConfigService.fetchConfig()
     }
 }
 

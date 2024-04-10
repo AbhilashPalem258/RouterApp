@@ -2,9 +2,11 @@
 // https://docs.swift.org/swift-book
 
 import UIKit
+import FirebaseCore
 
 public extension UIWindow {
     func mainRouter() throws -> some Routing {
+        FirebaseApp.configure()
         let router = try Router()
         self.rootViewController = router.navController
         return router
